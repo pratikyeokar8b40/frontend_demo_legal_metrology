@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import cocaColaLabel from "./assets/coca_cola_label.jpg";
 import {
   Camera,
   Upload,
@@ -149,7 +150,7 @@ export default function ScannerPage() {
     }
 
     // Set captured image to the scanned label image
-    setCapturedImage("/coca_cola_label.jpg");
+    setCapturedImage(cocaColaLabel);
     stopCamera();
     startProcessing();
   };
@@ -163,7 +164,7 @@ export default function ScannerPage() {
       canvas.height = video.videoHeight || 480;
       const ctx = canvas.getContext("2d");
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      setCapturedImage("/coca_cola_label.jpg");
+      setCapturedImage(cocaColaLabel);
       stopCamera();
       startProcessing();
     }
@@ -184,7 +185,7 @@ export default function ScannerPage() {
 
   // Use preloaded Coca-Cola label photo for demo
   const useSamplePhoto = () => {
-    setCapturedImage("/coca_cola_label.jpg");
+    setCapturedImage(cocaColaLabel);
     startProcessing();
   };
 
@@ -481,7 +482,7 @@ export default function ScannerPage() {
 
                   {/* Rendered Scanned Coca-Cola Label Image */}
                   <img
-                    src={capturedImage || "/coca_cola_label.jpg"}
+                    src={capturedImage || cocaColaLabel}
                     alt="Scanned Packaging Label"
                     className="w-full h-full object-contain"
                   />

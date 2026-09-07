@@ -732,7 +732,7 @@ function SettingsPage() {
 }
 
 function LoginPage({ onSuccess }) {
-  const [email, setEmail] = useState("asha.kulkarni@metrology.gov.in");
+  const [email, setEmail] = useState("anubhav.pandey@metrology.gov.in");
   const [password, setPassword] = useState("demo123");
   const [remember, setRemember] = useState(true);
   const [error, setError] = useState("");

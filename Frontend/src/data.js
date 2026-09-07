@@ -5,7 +5,7 @@ export const audits = [
     sku: "SHD-750-IND",
     category: "Food & Beverage",
     source: "Field capture",
-    inspector: "Asha Kulkarni",
+    inspector: "AAnubhav Pandey",
     capturedAt: "2025-06-18T10:42:00",
     location: "Pune, Maharashtra",
     score: 45,

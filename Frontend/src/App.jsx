@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useMemo, useState } from "react";
-import { Link, Redirect, Route, Switch, useLocation } from "wouter";
+import { Link, Redirect, Route, Switch, useLocation, Router } from "wouter";
 import {
   AlertTriangle, ArrowRight, BarChart3, Bell, Camera, Check, Link2,
   ChevronRight, CircleHelp, ClipboardList, Clock3, Database, Download,
@@ -801,6 +801,7 @@ function NotFound() {
 export default function App() {
   const [location, setLocation] = useLocation();
   const [authenticated, setAuthenticated] = useState(() => readStore("lm-authenticated", true));
+  const base = (import.meta.env.BASE_URL || "").replace(/\/$/, "");
 
   if (!authenticated) {
     return (
@@ -816,20 +817,22 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      <Shell onLogout={() => { localStorage.setItem("lm-authenticated", "false"); setAuthenticated(false); setLocation("/"); }}>
-        <Switch>
-          <Route path="/" component={Dashboard} />
-          <Route path="/scan" component={ScannerPage} />
-          <Route path="/audits" component={AuditsPage} />
-          <Route path="/audits/demo-energy-drink" component={DetailPage} />
-          <Route path="/reports" component={ReportsPage} />
-          <Route path="/evidence" component={EvidencePage} />
-          <Route path="/analytics" component={AnalyticsPage} />
-          <Route path="/features" component={FeaturesPage} />
-          <Route path="/settings" component={SettingsPage} />
-          <Route component={NotFound} />
-        </Switch>
-      </Shell>
+      <Router base={base}>
+        <Shell onLogout={() => { localStorage.setItem("lm-authenticated", "false"); setAuthenticated(false); setLocation("/"); }}>
+          <Switch>
+            <Route path="/" component={Dashboard} />
+            <Route path="/scan" component={ScannerPage} />
+            <Route path="/audits" component={AuditsPage} />
+            <Route path="/audits/demo-energy-drink" component={DetailPage} />
+            <Route path="/reports" component={ReportsPage} />
+            <Route path="/evidence" component={EvidencePage} />
+            <Route path="/analytics" component={AnalyticsPage} />
+            <Route path="/features" component={FeaturesPage} />
+            <Route path="/settings" component={SettingsPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </Shell>
+      </Router>
     </ErrorBoundary>
   );
 }

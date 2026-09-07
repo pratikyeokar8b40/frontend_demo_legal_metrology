@@ -198,7 +198,7 @@ function Shell({ children, onLogout }) {
         <div className="sidebar-footer">
           <div className="officer">
             <div className="avatar">AK</div>
-            <div><strong>Asha Kulkarni</strong><span>Field officer · Pune</span></div>
+            <div><strong>Anubhav Pandey</strong><span>Field officer · Pune</span></div>
             <button className="signout-button" onClick={onLogout} aria-label="Sign out" data-testid="button-sign-out">
               <MoreHorizontal size={16} />
             </button>
@@ -382,7 +382,7 @@ function DetailPage() {
   const createReport = () => { localStorage.setItem("lm-report-created", "true"); setReportCreated(true); setLocation("/reports"); };
   return (
     <div className="content">
-      <PageHeading eyebrow="Audit AUD-2025-0047 · Field capture" title={<span className="audit-title-row">Sparkle Hydration Energy Drink <StatusBadge status="Violation" /></span>} subtitle="A 750 ml can reviewed against Packaged Commodities Rules, 2011. Captured in Pune on 18 June 2025 by Asha Kulkarni." action={<button className="button primary" onClick={createReport} data-testid="button-generate-detail-report"><FileText size={15} /> {reportCreated ? "Open report queue" : "Generate report"}</button>} />
+      <PageHeading eyebrow="Audit AUD-2025-0047 · Field capture" title={<span className="audit-title-row">Sparkle Hydration Energy Drink <StatusBadge status="Violation" /></span>} subtitle="A 750 ml can reviewed against Packaged Commodities Rules, 2011. Captured in Pune on 18 June 2025 by Anubhav Pandey." action={<button className="button primary" onClick={createReport} data-testid="button-generate-detail-report"><FileText size={15} /> {reportCreated ? "Open report queue" : "Generate report"}</button>} />
       <div className="detail-grid">
         <div className="card product-evidence">
           <div className="section-head">
@@ -397,7 +397,7 @@ function DetailPage() {
             <h3>Pack and listing identity</h3>
             <div className="identity-grid">
               <div><div className="field-label">Respondent</div><div className="field-value">QuickBite Global Retail Pvt. Ltd.</div></div>
-              <div><div className="field-label">Inspector</div><div className="field-value">Asha Kulkarni</div></div>
+              <div><div className="field-label">Inspector</div><div className="field-value">Anubhav Pandey</div></div>
               <div><div className="field-label">Pack origin</div><div className="field-value" style={{ color: "var(--red)" }}>Vietnam</div></div>
               <div><div className="field-label">Listing origin</div><div className="field-value" style={{ color: "var(--red)" }}>India</div></div>
               <div><div className="field-label">Quantity</div><div className="field-value">750 ml</div></div>
@@ -440,7 +440,7 @@ function ReportsPage() {
   const generate = () => { setGenerated(true); const next = reports.find((item) => item.auditId === "AUD-2025-0047") || seedReports[0]; setSelected(next); };
   const download = () => {
     const rows = violations.map((item) => `<tr><td>${item.requirement}</td><td>${item.finding}</td><td>${item.rule}</td><td>${item.status}</td></tr>`).join("");
-    const body = `<!doctype html><html><head><meta charset="utf-8"><title>${selected.reference} · Show Cause Notice</title><style>body{font-family:Arial,sans-serif;color:#26333a;max-width:900px;margin:48px auto;line-height:1.5}h1{font-size:26px;text-align:center;border:2px solid #c8564f;padding:14px}h2{font-size:18px;border-bottom:1px solid #d7ddd9;padding-bottom:8px;margin-top:28px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #b8c4c2;padding:9px;text-align:left;vertical-align:top}th{background:#264a62;color:white}.meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-bottom:1px solid #d7ddd9;padding-bottom:18px}.meta b{display:block;color:#64747a;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.footer{display:flex;justify-content:space-between;border-top:2px solid #3f8b6c;margin-top:30px;padding-top:16px;font-size:13px}</style></head><body><p style="text-align:center;font-weight:bold">GOVERNMENT OF MAHARASHTRA · OFFICE OF THE CONTROLLER OF LEGAL METROLOGY</p><h1>SHOW CAUSE NOTICE UNDER SECTION 15 OF THE LEGAL METROLOGY ACT, 2009</h1><p style="text-align:center">Read with Rule 32 of the Legal Metrology (Packaged Commodities) Rules, 2011</p><div class="meta"><div><b>Notice reference</b>${selected.reference}</div><div><b>Issued at</b>18 June 2025 · 11:04 IST</div><div><b>Respondent</b>${selected.respondent}</div><div><b>Audit record</b>${selected.auditId}</div><div><b>Product</b>${selected.product} · 750 ml can</div><div><b>Place of inspection</b>Pune, Maharashtra</div></div><h2>Subject</h2><p>Notice to show cause why action should not be initiated for non-compliance with declarations required under the Legal Metrology Act, 2009 and the Packaged Commodities Rules, 2011.</p><h2>Findings recorded</h2><table><thead><tr><th>Declaration / check</th><th>Observation</th><th>Provision</th><th>Result</th></tr></thead><tbody>${rows}</tbody></table><h2>Automated compliance scorecard</h2><table><tr><td>Overall LMPC compliance index</td><td><strong>${selected.score} / 100</strong></td><td>Critical deductions −35 · Major deductions −20</td></tr><tr><td>Evidence tier</td><td>Tier 1 · Field</td><td>Two source images and one marketplace record</td></tr></table><h2>Evidence and verification</h2><p>Evidence chain: sha256:4d61c48a2f90f1d85b77…a8c2. The hash was verified against the immutable field capture at the time of report generation.</p><div class="footer"><div><b>Prepared by</b><br>Asha Kulkarni<br>Legal Metrology Officer, Pune</div><div><b>Verification</b><br>Digital register signature on file<br>LM-PUN-AK-2025</div></div></body></html>`;
+    const body = `<!doctype html><html><head><meta charset="utf-8"><title>${selected.reference} · Show Cause Notice</title><style>body{font-family:Arial,sans-serif;color:#26333a;max-width:900px;margin:48px auto;line-height:1.5}h1{font-size:26px;text-align:center;border:2px solid #c8564f;padding:14px}h2{font-size:18px;border-bottom:1px solid #d7ddd9;padding-bottom:8px;margin-top:28px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #b8c4c2;padding:9px;text-align:left;vertical-align:top}th{background:#264a62;color:white}.meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;border-bottom:1px solid #d7ddd9;padding-bottom:18px}.meta b{display:block;color:#64747a;font-size:11px;text-transform:uppercase;letter-spacing:.08em}.footer{display:flex;justify-content:space-between;border-top:2px solid #3f8b6c;margin-top:30px;padding-top:16px;font-size:13px}</style></head><body><p style="text-align:center;font-weight:bold">GOVERNMENT OF MAHARASHTRA · OFFICE OF THE CONTROLLER OF LEGAL METROLOGY</p><h1>SHOW CAUSE NOTICE UNDER SECTION 15 OF THE LEGAL METROLOGY ACT, 2009</h1><p style="text-align:center">Read with Rule 32 of the Legal Metrology (Packaged Commodities) Rules, 2011</p><div class="meta"><div><b>Notice reference</b>${selected.reference}</div><div><b>Issued at</b>18 June 2025 · 11:04 IST</div><div><b>Respondent</b>${selected.respondent}</div><div><b>Audit record</b>${selected.auditId}</div><div><b>Product</b>${selected.product} · 750 ml can</div><div><b>Place of inspection</b>Pune, Maharashtra</div></div><h2>Subject</h2><p>Notice to show cause why action should not be initiated for non-compliance with declarations required under the Legal Metrology Act, 2009 and the Packaged Commodities Rules, 2011.</p><h2>Findings recorded</h2><table><thead><tr><th>Declaration / check</th><th>Observation</th><th>Provision</th><th>Result</th></tr></thead><tbody>${rows}</tbody></table><h2>Automated compliance scorecard</h2><table><tr><td>Overall LMPC compliance index</td><td><strong>${selected.score} / 100</strong></td><td>Critical deductions −35 · Major deductions −20</td></tr><tr><td>Evidence tier</td><td>Tier 1 · Field</td><td>Two source images and one marketplace record</td></tr></table><h2>Evidence and verification</h2><p>Evidence chain: sha256:4d61c48a2f90f1d85b77…a8c2. The hash was verified against the immutable field capture at the time of report generation.</p><div class="footer"><div><b>Prepared by</b><br>Anubhav Pandey<br>Legal Metrology Officer, Pune</div><div><b>Verification</b><br>Digital register signature on file<br>LM-PUN-AK-2025</div></div></body></html>`;
     const blob = new Blob([body], { type: "text/html" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -498,7 +498,7 @@ function ReportsPage() {
         <h3>Evidence and verification</h3>
         <p>Evidence chain: <span className="mono">sha256:4d61c48a2f90f1d85b77…a8c2</span>. The hash was verified against the immutable field capture at the time of report generation. This document reflects the register as recorded on 18 June 2025.</p>
         <div className="notice-footer">
-          <div><strong>Prepared by</strong><br />Asha Kulkarni<br />Legal Metrology Officer, Pune</div>
+          <div><strong>Prepared by</strong><br />Anubhav Pandey<br />Legal Metrology Officer, Pune</div>
           <div><strong>Verification</strong><br />Digital register signature on file<br /><span className="mono">LM-PUN-AK-2025</span></div>
         </div>
       </div>
@@ -681,7 +681,7 @@ function SettingsPage() {
         <div className="card settings-card">
           <div className="profile-block">
             <div className="profile-avatar">AK</div>
-            <div><h3>Asha Kulkarni</h3><p>Field officer · Pune Division</p></div>
+            <div><h3>Anubhav Pandey</h3><p>Field officer · Pune Division</p></div>
           </div>
           <div className="setting-row">
             <div className="setting-copy"><strong>Role</strong><span>Can capture, review, and draft enforcement reports</span></div>

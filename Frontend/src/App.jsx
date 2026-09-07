@@ -238,7 +238,7 @@ function Dashboard() {
   const [, setLocation] = useLocation();
   return (
     <div className="content dashboard-page">
-      <PageHeading eyebrow="Officer overview · 18 June 2025" title="Good morning, Asha." subtitle="Your register is current. Three audits need an enforcement decision before the afternoon field round." action={<button className="button primary" onClick={() => setLocation("/scan")} data-testid="button-open-demo-audit"><Camera size={15} /> Launch AI Scanner</button>} />
+      <PageHeading eyebrow="Officer overview · 18 June 2025" title="Good morning, Anubhav." subtitle="Your register is current. Three audits need an enforcement decision before the afternoon field round." action={<button className="button primary" onClick={() => setLocation("/scan")} data-testid="button-open-demo-audit"><Camera size={15} /> Launch AI Scanner</button>} />
       <div className="grid stats">
         <div className="card stat-card"><span className="stat-rule" /><span className="stat-label">Audits this month</span><strong className="stat-number">47</strong><span className="stat-note good">↑ 12 from May</span></div>
         <div className="card stat-card"><span className="stat-rule" /><span className="stat-label">Average compliance</span><strong className="stat-number">71.4</strong><span className="stat-note">out of 100 points</span></div>

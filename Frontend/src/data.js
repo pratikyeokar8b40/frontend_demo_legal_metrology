@@ -71,7 +71,7 @@ export const audits = [
     sku: "HPF-1000-SS",
     category: "Household",
     source: "Field capture",
-    inspector: "Asha Kulkarni",
+    inspector: "anubhav Pandey",
     capturedAt: "2025-06-16T09:31:00",
     location: "Satara, Maharashtra",
     score: 64,
